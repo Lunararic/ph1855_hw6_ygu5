@@ -7,6 +7,39 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(NSM3)
+```
+
+# Hollander et al. Nonparametric Statistical Methods 2014
+# P212 Q1
+```{r}
+qchisq(.975, 3)
 ```
 
 
+# P224 Q11
+```{r}
+# input data
+X1 = c(0, 1, 3, 3, 5, 10, 13, 17, 26)
+X2 = c(0, 6, 7, 9, 11, 13, 20, 20, 24)
+X3 = c(0, 5, 8, 9, 11, 13, 16, 17, 20)
+X4 = c(1, 5, 12, 13, 19, 22, 25, 27, 29)
+psycho_data = list(X1, X2, X3, X4)
+library(NSM3)
+pJCK(psycho_data)
+```
+
+
+# P265 Q47
+```{r}
+# input data
+X = c(0, 1, 3, 3, 5, 10, 13, 17, 26, 
+      0, 6, 7, 9, 11, 13, 20, 20, 24,
+      0, 5, 8, 9, 11, 13, 16, 17, 20,
+      1, 5, 12, 13, 19, 22, 25, 27, 29)
+g = rep(1:4, each=9)
+# implement pairwise comparison
+pSDCFlig(X, g)
+# find the critical value
+cRangeNor(0.05, 4)
+```
